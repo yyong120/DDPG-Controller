@@ -137,11 +137,11 @@ def plot_rewards_steps(save_dir):
     plt.close()
 
 
-def plot_q_value(checkpoint_dir, save_dir):
-    fig_file = os.path.join(save_dir, 'q_value.png')
+def plot_q_value(checkpoint_dir, save_dir, x1_range, x2_range, x1_num, x2_num, name):
+    fig_file = os.path.join(save_dir, name)
 
-    x1 = np.linspace(-1, 1, 20)
-    x2 = np.linspace(-5.5, 5.5, 100)
+    x1 = np.linspace(x1_range[0], x1_range[1], x1_num)
+    x2 = np.linspace(x2_range[0], x2_range[1], x2_num)
     x1, x2 = np.meshgrid(x1, x2)
 
     # load model
@@ -194,4 +194,5 @@ if __name__ == '__main__':
 
     plot_stable_region(save_dir=graph_save_dir)
 
-    plot_q_value(checkpoint_dir=checkpoint_dir, save_dir=graph_save_dir)
+    plot_q_value(checkpoint_dir=checkpoint_dir, save_dir=graph_save_dir, x1_range=[-1, 1], x2_range=[-5.5, 5.5], x1_num=20, x2_num=100, name='q_value.png')
+    plot_q_value(checkpoint_dir=checkpoint_dir, save_dir=graph_save_dir, x1_range=[-1, 1], x2_range=[-25, 25], x1_num=20, x2_num=400, name='q_value_larger_range.png')
