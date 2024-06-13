@@ -1,0 +1,6 @@
+tqdm
+matplotlib
+numpy
+scipy
+torch
+casadi
