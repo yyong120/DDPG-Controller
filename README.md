@@ -22,6 +22,8 @@ python plot.py
 ```
 This will generate plenty of graphs under the `graphs/` directory, including the noise added during simulation, the trajectories of system states and control inputs starting from different intial points, Q-values after training, accumulated rewards and steps in each episode.
 
+Please run the simulation before plotting.
+
 ### Compare DDPG controller and model predictive controller
 ```shell
 python perf_comp.py
